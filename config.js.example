@@ -1,0 +1,31 @@
+require("dotenv").config();
+
+module.exports = {
+  token: "",  // your bot token
+  logs: "", // channel id for lavalink server status logs
+
+  nodes: [
+    {
+      host: "",
+      identifier: "",
+      port: parseInt(""),
+      password: "",
+      secure: parseBoolean("false"),
+
+    }
+  ],
+
+}
+
+function parseBoolean(value) {
+  if (typeof (value) === 'string') {
+    value = value.trim().toLowerCase();
+  }
+  switch (value) {
+    case true:
+    case "true":
+      return true;
+    default:
+      return false;
+  }
+}
